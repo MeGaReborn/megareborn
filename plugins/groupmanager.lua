@@ -4,9 +4,9 @@ local lang = redis:get(hash)
     -- superuser and admins only (because sudo are always has privilege)
     if not is_admin(msg) then
    if not lang then
-        return '_#شما مدیر ربات Reborn نمیباشید!🍃_'
+        return '_#شما مدیر ربات نمیباشید!🍃_'
 else
-     return '#شما مدیر ربات Reborn نمیباشید!🍃'
+     return '#شما مدیر ربات نمیباشید!🍃'
     end
 end
     local data = load_data(_config.moderation.data)
