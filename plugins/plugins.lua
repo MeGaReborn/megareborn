@@ -1,5 +1,5 @@
 do
--- #Begin plugins.lua by @BeyondTeam
+-- #Begin plugins.lua by 
 -- Returns the key (index) in the config.enabled_plugins table
 local function plugin_enabled( name )
   for k,v in pairs(_config.enabled_plugins) do
@@ -22,7 +22,7 @@ local function plugin_exists( name )
 end
 
 local function list_all_plugins(only_enabled, msg)
-  local tmp = '\n\n@BeyondTeam'
+  local tmp = '\n\n'
   local text = ''
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
