@@ -4,17 +4,17 @@ local lang = redis:get(hash)
     -- superuser and admins only (because sudo are always has privilege)
     if not is_admin(msg) then
    if not lang then
-        return '_You are not bot admin_'
+        return '_#شما مدیر ربات Reborn نمیباشید!🍃_'
 else
-     return 'شما مدیر ربات نمیباشید'
+     return '#شما مدیر ربات Reborn نمیباشید!🍃'
     end
 end
     local data = load_data(_config.moderation.data)
   if data[tostring(msg.to.id)] then
 if not lang then
-   return '_Group is already added_'
+   return '_#ربات بدون هیچ مشکلی فعال شد!🍃_'
 else
-return 'گروه در لیست گروه های مدیریتی ربات هم اکنون موجود است'
+return '#ربات در لیست مدیریتی موجود می باشد!🍃'
   end
 end
         -- create data array in moderation.json
@@ -61,7 +61,7 @@ end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
     if not lang then
-  return '*Group has been added*'
+  return '*#ربات بدون هیچ مشکلی فعال شد!🍃*'
 else
   return 'گروه با موفقیت به لیست گروه های مدیریتی ربات افزوده شد'
 end
@@ -73,9 +73,9 @@ local lang = redis:get(hash)
     -- superuser and admins only (because sudo are always has privilege)
       if not is_admin(msg) then
      if not lang then
-        return '_You are not bot admin_'
+        return '_#شما مدیر ربات reborn نمیباشید!🍃_'
    else
-        return 'شما مدیر ربات نمیباشید'
+        return '#شما مدیر ربات reborn نمیباشید!🍃'
     end
    end
     local data = load_data(_config.moderation.data)
@@ -97,9 +97,9 @@ else
       end data[tostring(groups)][tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
  if not lang then
-  return '*Group has been removed*'
+  return '*#گروه دیگر توسط reborn ساپورت نمیشود!🍃*'
  else
-  return 'گروه با موفیت از لیست گروه های مدیریتی ربات حذف شد'
+  return '#گروه دیگر توسط reborn ساپورت نمیشود!🍃'
 end
 end
 
@@ -1343,10 +1343,10 @@ end
 if not lang then
 
 local settings = data[tostring(target)]["settings"] 
- text = "*Group Settings:*\n_Lock edit :_ *"..settings.lock_edit.."*\n_Lock links :_ *"..settings.lock_link.."*\n_Lock tags :_ *"..settings.lock_tag.."*\n_Lock flood :_ *"..settings.flood.."*\n_Lock spam :_ *"..settings.lock_spam.."*\n_Lock mention :_ *"..settings.lock_mention.."*\n_Lock arabic :_ *"..settings.lock_arabic.."*\n_Lock webpage :_ *"..settings.lock_webpage.."*\n_Lock markdown :_ *"..settings.lock_markdown.."*\n_Group welcome :_ *"..settings.welcome.."*\n_Lock pin message :_ *"..settings.lock_pin.."*\n_Bots protection :_ *"..settings.lock_bots.."*\n_Flood sensitivity :_ *"..NUM_MSG_MAX.."*\n*____________________*\n_Expire Date :_ *"..expire_date.."*\n*Bot channel*: @BeyondTeam\n*Group Language* : *EN*"
+ text = "*Group Settings:*\n_Lock edit :_ *"..settings.lock_edit.."*\n_Lock links :_ *"..settings.lock_link.."*\n_Lock tags :_ *"..settings.lock_tag.."*\n_Lock flood :_ *"..settings.flood.."*\n_Lock spam :_ *"..settings.lock_spam.."*\n_Lock mention :_ *"..settings.lock_mention.."*\n_Lock arabic :_ *"..settings.lock_arabic.."*\n_Lock webpage :_ *"..settings.lock_webpage.."*\n_Lock markdown :_ *"..settings.lock_markdown.."*\n_Group welcome :_ *"..settings.welcome.."*\n_Lock pin message :_ *"..settings.lock_pin.."*\n_Bots protection :_ *"..settings.lock_bots.."*\n_Flood sensitivity :_ *"..NUM_MSG_MAX.."*\n*____________________*\n_Expire Date :_ *"..expire_date.."*\n*Bot channel*: @telereborn\n*Group Language* : *EN*"
 else
 local settings = data[tostring(target)]["settings"] 
- text = "*تنظیمات گروه:*\n_قفل ویرایش پیام :_ *"..settings.lock_edit.."*\n_قفل لینک :_ *"..settings.lock_link.."*\n_قفل تگ :_ *"..settings.lock_tag.."*\n_قفل پیام مکرر :_ *"..settings.flood.."*\n_قفل هرزنامه :_ *"..settings.lock_spam.."*\n_قفل فراخوانی :_ *"..settings.lock_mention.."*\n_قفل عربی :_ *"..settings.lock_arabic.."*\n_قفل صفحات وب :_ *"..settings.lock_webpage.."*\n_قفل فونت :_ *"..settings.lock_markdown.."*\n_پیام خوشآمد گویی :_ *"..settings.welcome.."*\n_قفل سنجاق کردن :_ *"..settings.lock_pin.."*\n_محافظت در برابر ربات ها :_ *"..settings.lock_bots.."*\n_حداکثر پیام مکرر :_ *"..NUM_MSG_MAX.."*\n*____________________*\n_تاریخ انقضا :_ *"..expire_date.."*\n*کانال ما*: @BeyondTeam\n_زبان سوپرگروه_ : *FA*"
+ text = "*تنظیمات گروه:*\n_قفل ویرایش پیام :_ *"..settings.lock_edit.."*\n_قفل لینک :_ *"..settings.lock_link.."*\n_قفل تگ :_ *"..settings.lock_tag.."*\n_قفل پیام مکرر :_ *"..settings.flood.."*\n_قفل هرزنامه :_ *"..settings.lock_spam.."*\n_قفل فراخوانی :_ *"..settings.lock_mention.."*\n_قفل عربی :_ *"..settings.lock_arabic.."*\n_قفل صفحات وب :_ *"..settings.lock_webpage.."*\n_قفل فونت :_ *"..settings.lock_markdown.."*\n_پیام خوشآمد گویی :_ *"..settings.welcome.."*\n_قفل سنجاق کردن :_ *"..settings.lock_pin.."*\n_محافظت در برابر ربات ها :_ *"..settings.lock_bots.."*\n_حداکثر پیام مکرر :_ *"..NUM_MSG_MAX.."*\n*____________________*\n_تاریخ انقضا :_ *"..expire_date.."*\n*کانال ما*: @telereborn\n_زبان سوپرگروه_ : *FA*"
 end
 return text
 end
@@ -2379,7 +2379,7 @@ local mutes = data[tostring(target)]["mutes"]
  text = " *Group Mute List* : \n_Mute all : _ *"..mutes.mute_all.."*\n_Mute gif :_ *"..mutes.mute_gif.."*\n_Mute text :_ *"..mutes.mute_text.."*\n_Mute inline :_ *"..mutes.mute_inline.."*\n_Mute game :_ *"..mutes.mute_game.."*\n_Mute photo :_ *"..mutes.mute_photo.."*\n_Mute video :_ *"..mutes.mute_video.."*\n_Mute audio :_ *"..mutes.mute_audio.."*\n_Mute voice :_ *"..mutes.mute_voice.."*\n_Mute sticker :_ *"..mutes.mute_sticker.."*\n_Mute contact :_ *"..mutes.mute_contact.."*\n_Mute forward :_ *"..mutes.mute_forward.."*\n_Mute location :_ *"..mutes.mute_location.."*\n_Mute document :_ *"..mutes.mute_document.."*\n_Mute TgService :_ *"..mutes.mute_tgservice.."*\n_Mute Keyboard :_ *"..mutes.mute_keyboard.."*\n*____________________*\n*Bot channel*: @BeyondTeam\n*Group Language* : *EN*"
 else
 local mutes = data[tostring(target)]["mutes"] 
- text = " *لیست بیصدا ها* : \n_بیصدا همه : _ *"..mutes.mute_all.."*\n_بیصدا تصاویر متحرک :_ *"..mutes.mute_gif.."*\n_بیصدا متن :_ *"..mutes.mute_text.."*\n_بیصدا کیبورد شیشه ای :_ *"..mutes.mute_inline.."*\n_بیصدا بازی های تحت وب :_ *"..mutes.mute_game.."*\n_بیصدا عکس :_ *"..mutes.mute_photo.."*\n_بیصدا فیلم :_ *"..mutes.mute_video.."*\n_بیصدا آهنگ :_ *"..mutes.mute_audio.."*\n_بیصدا صدا :_ *"..mutes.mute_voice.."*\n_بیصدا برچسب :_ *"..mutes.mute_sticker.."*\n_بیصدا مخاطب :_ *"..mutes.mute_contact.."*\n_بیصدا نقل قول :_ *"..mutes.mute_forward.."*\n_بیصدا موقعیت :_ *"..mutes.mute_location.."*\n_بیصدا اسناد :_ *"..mutes.mute_document.."*\n_بیصدا خدمات تلگرام :_ *"..mutes.mute_tgservice.."*\n_بیصدا صفحه کلید :_ *"..mutes.mute_keyboard.."*\n*____________________*\n*Bot channel*: @BeyondTeam\n_زبان سوپرگروه_ : *FA*"
+ text = " *لیست بیصدا ها* : \n_بیصدا همه : _ *"..mutes.mute_all.."*\n_بیصدا تصاویر متحرک :_ *"..mutes.mute_gif.."*\n_بیصدا متن :_ *"..mutes.mute_text.."*\n_بیصدا کیبورد شیشه ای :_ *"..mutes.mute_inline.."*\n_بیصدا بازی های تحت وب :_ *"..mutes.mute_game.."*\n_بیصدا عکس :_ *"..mutes.mute_photo.."*\n_بیصدا فیلم :_ *"..mutes.mute_video.."*\n_بیصدا آهنگ :_ *"..mutes.mute_audio.."*\n_بیصدا صدا :_ *"..mutes.mute_voice.."*\n_بیصدا برچسب :_ *"..mutes.mute_sticker.."*\n_بیصدا مخاطب :_ *"..mutes.mute_contact.."*\n_بیصدا نقل قول :_ *"..mutes.mute_forward.."*\n_بیصدا موقعیت :_ *"..mutes.mute_location.."*\n_بیصدا اسناد :_ *"..mutes.mute_document.."*\n_بیصدا خدمات تلگرام :_ *"..mutes.mute_tgservice.."*\n_بیصدا صفحه کلید :_ *"..mutes.mute_keyboard.."*\n*____________________*\n*Bot channel*: @telereborn\n_زبان سوپرگروه_ : *FA*"
 end
 return text
 end
@@ -2854,9 +2854,9 @@ if matches[1] == 'newlink' and is_mod(msg) then
   if matches[1] == "rules" then
  if not data[tostring(chat)]['rules'] then
    if not lang then
-     rules = "ℹ️ The Default Rules :\n1⃣ No Flood.\n2⃣ No Spam.\n3⃣ No Advertising.\n4⃣ Try to stay on topic.\n5⃣ Forbidden any racist, sexual, homophobic or gore content.\n➡️ Repeated failure to comply with these rules will cause ban.\n@BeyondTeam"
+     rules = "ℹ️ The Default Rules :\n1⃣ No Flood.\n2⃣ No Spam.\n3⃣ No Advertising.\n4⃣ Try to stay on topic.\n5⃣ Forbidden any racist, sexual, homophobic or gore content.\n➡️ Repeated failure to comply with these rules will cause ban.\n@telereborn"
     elseif lang then
-       rules = "ℹ️ قوانین پپیشفرض:\n1⃣ ارسال پیام مکرر ممنوع.\n2⃣ اسپم ممنوع.\n3⃣ تبلیغ ممنوع.\n4⃣ سعی کنید از موضوع خارج نشید.\n5⃣ هرنوع نژاد پرستی, شاخ بازی و پورنوگرافی ممنوع .\n➡️ از قوانین پیروی کنید, در صورت عدم رعایت قوانین اول اخطار و در صورت تکرار مسدود.\n@BeyondTeam"
+       rules = "ℹ️ قوانین پپیشفرض:\n1⃣ ارسال پیام مکرر ممنوع.\n2⃣ اسپم ممنوع.\n3⃣ تبلیغ ممنوع.\n4⃣ سعی کنید از موضوع خارج نشید.\n5⃣ هرنوع نژاد پرستی, شاخ بازی و پورنوگرافی ممنوع .\n➡️ از قوانین پیروی کنید, در صورت عدم رعایت قوانین اول اخطار و در صورت تکرار مسدود.\n@telereborn"
  end
         else
      rules = "*Group Rules :*\n"..data[tostring(chat)]['rules']
@@ -3061,271 +3061,268 @@ if matches[1] == "help" and is_mod(msg) then
 if not lang then
 text = [[
 *Beyond Bot Commands:*
-
 *!setowner* `[username|id|reply]` 
 _Set Group Owner(Multi Owner)_
-
 *!remowner* `[username|id|reply]` 
  _Remove User From Owner List_
-
 *!promote* `[username|id|reply]` 
 _Promote User To Group Admin_
-
 *!demote* `[username|id|reply]` 
 _Demote User From Group Admins List_
-
 *!setflood* `[1-50]`
 _Set Flooding Number_
-
 *!silent* `[username|id|reply]` 
 _Silent User From Group_
-
 *!unsilent* `[username|id|reply]` 
 _Unsilent User From Group_
-
 *!kick* `[username|id|reply]` 
 _Kick User From Group_
-
 *!ban* `[username|id|reply]` 
 _Ban User From Group_
-
 *!unban* `[username|id|reply]` 
 _UnBan User From Group_
-
 *!res* `[username]`
 _Show User ID_
-
 *!id* `[reply]`
 _Show User ID_
-
 *!whois* `[id]`
 _Show User's Username And Name_
-
 *!lock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
 _If This Actions Lock, Bot Check Actions And Delete Them_
-
 *!unlock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
 _If This Actions Unlock, Bot Not Delete Them_
-
 *!mute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
 _If This Actions Lock, Bot Check Actions And Delete Them_
-
 *!unmute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
 _If This Actions Unlock, Bot Not Delete Them_
-
 *!set*`[rules | name | photo | link | about | welcome]`
 _Bot Set Them_
-
 *!clean* `[bans | mods | bots | rules | about | silentlist | filtelist | welcome]`   
 _Bot Clean Them_
-
 *!filter* `[word]`
 _Word filter_
-
 *!unfilter* `[word]`
 _Word unfilter_
-
 *!pin* `[reply]`
 _Pin Your Message_
-
 *!unpin* 
 _Unpin Pinned Message_
-
 *!welcome enable/disable*
 _Enable Or Disable Group Welcome_
-
 *!settings*
 _Show Group Settings_
-
 *!mutelist*
 _Show Mutes List_
-
 *!silentlist*
 _Show Silented Users List_
-
 *!filterlist*
 _Show Filtered Words List_
-
 *!banlist*
 _Show Banned Users List_
-
 *!ownerlist*
 _Show Group Owners List_ 
-
 *!modlist* 
 _Show Group Moderators List_
-
 *!rules*
 _Show Group Rules_
-
 *!about*
 _Show Group Description_
-
 *!id*
 _Show Your And Chat ID_
-
 *!gpinfo*
 _Show Group Information_
-
 *!newlink*
 _Create A New Link_
-
 *!link*
 _Show Group Link_
-
 *!linkpv*
 _Send Group Link In Your Private Message_
-
 *!setwelcome [text]*
 _set Welcome Message_
-
 *!helptools*
 _Show Tools Help_
-
 *!helpfun*
 _Show Fun Help_
-
 _You Can Use_ *[!/#]* _To Run The Commands_
 _This Help List Only For_ *Moderators/Owners!*
 _Its Means, Only Group_ *Moderators/Owners* _Can Use It!_
-
 *Good luck ;)*]]
 
 elseif lang then
 
 text = [[
-*دستورات ربات بیوند:*
+لیست_دستورات_سوپرگروه
 
-*!setowner* `[username|id|reply]` 
-_انتخاب مالک گروه(قابل انتخاب چند مالک)_
+📌قفل کردن یکی از موارد زیر4
+!mute [gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]
 
-*!remowner* `[username|id|reply]` 
- _حذف کردن فرد از فهرست مالکان گروه_
 
-*!promote* `[username|id|reply]` 
-_ارتقا مقام کاربر به مدیر گروه_
+!lock [link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]
 
-*!demote* `[username|id|reply]` 
-_تنزیل مقام مدیر به کاربر_
 
-*!setflood* `[1-50]`
-_تنظیم حداکثر تعداد پیام مکرر_
+📌بازکردن قفل یکی موارد زیر
+!unmute [gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]
+—----------------
+تنظیمات لیست موت
+/mutelist
+—----------------
+دستورات ربات ریبورن :
 
-*!silent* `[username|id|reply]` 
-_بیصدا کردن کاربر در گروه_
+!setowner [username|id|reply] 
+انتخاب مالک گروه(قابل انتخاب چند مالک)
 
-*!unsilent* `[username|id|reply]` 
-_در آوردن کاربر از حالت بیصدا در گروه_
+!remowner [username|id|reply] 
+ حذف کردن فرد از فهرست مالکان گروه
 
-*!kick* `[username|id|reply]` 
-_حذف کاربر از گروه_
+!promote [username|id|reply] 
+ارتقا مقام کاربر به مدیر گروه
 
-*!ban* `[username|id|reply]` 
-_مسدود کردن کاربر از گروه_
+!demote [username|id|reply] 
+تنزیل مقام مدیر به کاربر
 
-*!unban* `[username|id|reply]` 
-_در آوردن از حالت مسدودیت کاربر از گروه_
+!setflood [1-50]
+تنظیم حداکثر تعداد پیام مکرر
 
-*!res* `[username]`
-_نمایش شناسه کاربر_
+!silent [username|id|reply] 
+بیصدا کردن کاربر در گروه
 
-*!id* `[reply]`
-_نمایش شناسه کاربر_
+!unsilent [username|id|reply] 
+در آوردن کاربر از حالت بیصدا در گروه
 
-*!whois* `[id]`
-_نمایش نام کاربر, نام کاربری و اطلاعات حساب_
+!kick [username|id|reply] 
+حذف کاربر از گروه
 
-*!lock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
-_در صورت قفل بودن فعالیت ها, ربات آنهارا حذف خواهد کرد_
+!ban [username|id|reply] 
+مسدود کردن کاربر از گروه
 
-*!unlock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
-_در صورت قفل نبودن فعالیت ها, ربات آنهارا حذف نخواهد کرد_
+!unban [username|id|reply] 
+در آوردن از حالت مسدودیت کاربر از گروه
 
-*!mute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
-_در صورت بیصدد بودن فعالیت ها, ربات آنهارا حذف خواهد کرد_
+!res [username]
+نمایش شناسه کاربر
 
-*!unmute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
-_در صورت بیصدا نبودن فعالیت ها, ربات آنهارا حذف نخواهد کرد_
+!id [reply]
+نمایش شناسه کاربر
 
-*!set*`[rules | name | photo | link | about | welcome]`
-_ربات آنهارا ثبت خواهد کرد_
+!whois [id]
+نمایش نام کاربر, نام کاربری و اطلاعات حساب
 
-*!clean* `[bans | mods | bots | rules | about | silentlist | filterlist | welcome]`   
-_ربات آنهارا پاک خواهد کرد_
+!lock [link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | | fosh |pin]
+در صورت قفل بودن فعالیت ها, ربات آنهارا حذف خواهد کرد
 
-*!filter* `[word]`
-_فیلتر‌کلمه مورد نظر_
+!unlock [link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | fosh | mention |pin]
 
-*!unfilter* `[word]`
-_ازاد کردن کلمه مورد نظر_
+—------------------
+برای پین کردن متنی در گروه شما میتوانید پیام مورد نظر را ریپلای کرده و
+/pin
+ برای غیر فعال کردن پیام
+/unpin
+—------------------
+را ارسال کنید همچنین برای تنظیم خوشآمدگویی بصورت دلخواه به صورت زیر عمل کنید:
 
-*!pin* `[reply]`
-_ربات پیام شمارا در گروه سنجاق خواهد کرد_
+/setwelcome متن مورد نظر
+برای نشان دادن ایدی و اسم فرد وارد شونده میتوانید از 
 
-*!unpin* 
-_ربات پیام سنجاق شده در گروه را حذف خواهد کرد_
+یوزرنیم = {username} 
+نام = {name}
+نام خانوادگی = {lastname}
+استفاده کنید 
+مثال:
+/setweclome سلام {name} خوش اومدی
+—------------------
 
-*!welcome enable/disable*
-_فعال یا غیرفعال کردن خوشآمد گویی_
+/setflood
+تنظیم تعداد پیام مکرر مجاز
 
-*!settings*
-_نمایش تنظیمات گروه_
+مثال:
+برای مثال اگر تعداد پیام های مکرر مجاز را برای عدد 4 قرار بدهید
+/setflood 4
 
-*!mutelist*
-_نمایش فهرست بیصدا های گروه_
+—------------------
 
-*!silentlist*
-_نمایش فهرست افراد بیصدا_
+برای ممنوع کردن کلمه ای خاص در گروه میتوانید ازدستور زیر استفاده کنید
+/filter کلمه مورد نظر
+استفاده میکنید, برای مشاهده لیست کلمات ممنوع شده نیز کافیست 
+/filterlist
+را ارسال کنید
 
-*!filterlist*
-_نمایش لیست کلمات فیلتر شده_
+—------------------
 
-*!banlist*
-_نمایش افراد مسدود شده از گروه_
+برای قفل کردن گروه برای زمان مشخص به شکل زیر عمل کنید
 
-*!ownerlist*
-_نمایش فهرست مالکان گروه_ 
+/muteall 
 
-*!modlist* 
-_نمایش فهرست مدیران گروه_
+مثال:
+با دستور زیر گروه برای 1 ساعت و 20 دقیقه و 4 ثانیه قفل میشود
 
-*!rules*
-_نمایش قوانین گروه_
+/muteall 1
 
-*!about*
-_نمایش درباره گروه_
+—------------------
+تعیین وضعیت خروج داوطلبانه
+/stats kickme [active/off]
 
-*!id*
-_نمایش شناسه شما و گروه_
+—------------------
+/ban [ریپلی و آیدی]
+مسدود کردن کاربر
+/unban [ریپلی و آیدی]
+حذف کاربر از لیست افراد مسدود شده
+/banlist
+لیست افراد مسدود شده
 
-*!gpinfo*
-_نمایش اطلاعات گروه_
+/silent [ریپلی و آیدی]
+اضافه کردن کاربر به لیست افراد سکوت شده
+/unsilent [ریپلی و آیدی]
+حذف کردن کاربر به لیست افراد سکوت شده
+/silentlist
+لیست افراد سکوت شده
 
-!*newlink*
-_ساخت لینک جدید_
+/promote [ریپلی و آیدی]
+ارتقا دادن کاربر
+/demote [ریپلی و آیدی]
+برکنار کردن کاربر از مدیریت ربات
+/modlist
+لیست ادمین های ربات در گروه
 
-*!link*
-_نمایش لینک گروه_
+/getpro [1-10]
+دریافت عکس پروفایل شما
+عکس دوم پروفایل شما را نمایش میدهد
+/setlink
+تنظیم لینک برای گروه
+/setrules قوانین
+تنظیم متن قوانین گروه
+/setmester[آیدی عددی]
+تنظیم دریافت کننده گزارشات
+/report [ریپلی]
+گزارش فرد خاطی به کاربر تنظیم شد گروه
+/link
+دریافت لینک گروه
+/rules
+دریافت قوانین
+/myid
+دریافت اطلاعات خود در ربات
+/id
+دریافت شناسه عددی گروه و کاربر
+!whois [آیدی عددی]
+دریافت اطلاعت فرد مورد نظر
+/settings
+دریافت تنظیمات گروه
+/linkpv
+دریافت لینک گروه در پ ویتان!
+/kickme
+خارج شدن از گروه بصورت داوطلبانه
 
-*!linkpv*
-_ارسال لینک گروه به چت خصوصی شما_
+!clean [bans | mods | bots | rules | about | silentlist | filterlist | welcome]   
 
-*!setwelcome [text]*
-_ثبت پیام خوش آمد گویی_
-
-*!helptools*
-_نمایش راهنمای Tools_
-
-*!helpfun*
-_نمایش راهنمای سرگرمی_
-
-_شما میتوانید از [!/#] در اول دستورات برای اجرای آنها بهره بگیرید
-
-این راهنما فقط برای مدیران/مالکان گروه میباشد!
-
-این به این معناست که فقط مدیران/مالکان گروه میتوانند از دستورات بالا استفاده کنند!_
-
-*موفق باشید ;)*]]
+پاکسازی لیست افراد  مسدود/سکوت/مدیر/مالک شده
+—----------------
+🔊دستورات فان و تولز!🍃
+!helpfun
+------------
+!helptools
+—----------------
+⚠️شما میتوانید از ! و # و / در اول دستور ها استفاده کنید
+⚠️هرگونه سوال و انتقاد یا پیشنهادخود را میتوانید در گروه پشتیبانی مطرح کنید
+@telereborn]]
 end
 return text
 end
@@ -3402,9 +3399,9 @@ local lang = redis:get(hash)
 rules = administration[arg.chat_id]['rules']
 else
    if not lang then
-     rules = "ℹ️ The Default Rules :\n1⃣ No Flood.\n2⃣ No Spam.\n3⃣ No Advertising.\n4⃣ Try to stay on topic.\n5⃣ Forbidden any racist, sexual, homophobic or gore content.\n➡️ Repeated failure to comply with these rules will cause ban.\n@BeyondTeam"
+     rules = "ℹ️ The Default Rules :\n1⃣ No Flood.\n2⃣ No Spam.\n3⃣ No Advertising.\n4⃣ Try to stay on topic.\n5⃣ Forbidden any racist, sexual, homophobic or gore content.\n➡️ Repeated failure to comply with these rules will cause ban.\n@telereborn"
     elseif lang then
-       rules = "ℹ️ قوانین پپیشفرض:\n1⃣ ارسال پیام مکرر ممنوع.\n2⃣ اسپم ممنوع.\n3⃣ تبلیغ ممنوع.\n4⃣ سعی کنید از موضوع خارج نشید.\n5⃣ هرنوع نژاد پرستی, شاخ بازی و پورنوگرافی ممنوع .\n➡️ از قوانین پیروی کنید, در صورت عدم رعایت قوانین اول اخطار و در صورت تکرار مسدود.\n@BeyondTeam"
+       rules = "ℹ️ قوانین پپیشفرض:\n1⃣ ارسال پیام مکرر ممنوع.\n2⃣ اسپم ممنوع.\n3⃣ تبلیغ ممنوع.\n4⃣ سعی کنید از موضوع خارج نشید.\n5⃣ هرنوع نژاد پرستی, شاخ بازی و پورنوگرافی ممنوع .\n➡️ از قوانین پیروی کنید, در صورت عدم رعایت قوانین اول اخطار و در صورت تکرار مسدود.\n@telereborn"
  end
 end
 if data.username_ then
